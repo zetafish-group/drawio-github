@@ -3,6 +3,10 @@ Using draw.io diagrams in github:
 
 ![Test image](https://github.com/alderg/sandbox/raw/master/test.png)
 
-[Edit diagram](https://www.draw.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Falderg%2Fsandbox%2Fmaster%2Ftest.png)
+[Edit diagram](http://www.alderg.com/github.html?repo=sandbox&path=test.png)
+[Open as new](https://www.draw.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Falderg%2Fsandbox%2Fmaster%2Ftest.png)
 
-To update the diagram, export as PNG+XML via File, Export as, PNG (with XML).
+![Test image](https://github.com/alderg/sandbox/raw/master/test.svg)
+
+[Edit diagram](http://www.alderg.com/github.html?repo=sandbox&path=test.svg)
+[Open as new](https://www.draw.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2Falderg%2Fsandbox%2Fmaster%2Ftest.svg)
