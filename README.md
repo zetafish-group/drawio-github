@@ -1,6 +1,6 @@
 # Draw.io GitHub Integration
 
-![Diagram](https://github.com/alderg/drawio-github/raw/master/diagram.png)
+![Diagram](http://alderg.github.io/drawio-github/diagram.png)
 
 <a href="http://alderg.github.io/drawio-github/edit-diagram.html?repo=drawio-github&path=diagram.png" target="_blank">Edit</a> | <a href="https://www.draw.io/?url=http%3A%2F%2Falderg.github.io%2Fdrawio-github%2Fdiagram.png" target="_blank">Edit As New</a>
 
