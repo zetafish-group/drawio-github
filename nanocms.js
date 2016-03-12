@@ -117,7 +117,7 @@ var nanocms = function(elt)
 				return;
 			}
 	
-			var msg = prompt('Commit Message', 'Changed ' + tokens[tokens.length - 1]);
+			var msg = prompt('Commit Message', 'Update ' + tokens[tokens.length - 1]);
 	
 			if (msg == null)
 			{
