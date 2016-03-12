@@ -71,9 +71,12 @@
 							wnd.close();
 							
 							// Forces udpate of cached image
-							var newImage = new Image(]]><![CDATA[);
-							newImage.src = window.location.protocol + '//' + window.location.hostname +
-								window.location.pathname + '?' + new Date().getTime();
+							window.setTimeout(function()
+							{
+								var newImage = new Image();
+								newImage.src = window.location.protocol + '//' + window.location.hostname +
+									window.location.pathname + '?' + new Date().getTime();
+							}, 1000);
 						}
 					});
 				});
