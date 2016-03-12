@@ -12,4 +12,9 @@ Supported file formats: .png, .svg, .html and .xml (default)
 
 ![Self-editing Diagram](http://alderg.github.io/drawio-github/self-editing.svg)
 
-<a href="http://www.alderg.com/drawio-github/self-editing.svg" target="_blank">self-editing.svg</a> is an SVG file with embedded PNG data (as a workaround for missing foreignObject support in Internet Explorer). This combines an image format (eg. for <img src="...") with scripting for the GitHub integration. (Click on the link, not the image to enable editing.)
+<a href="http://alderg.github.io/drawio-github/self-editing.svg" target="_blank">self-editing.svg</a> is an SVG file with embedded PNG data (as a workaround for missing foreignObject support in Internet Explorer). This combines an image format (eg. for <img src="...") with scripting for GitHub integration. (Click on the link, not the image to enable editing.)
+
+## Self-editing HTML file
+
+<a href="http://alderg.github.io/drawio-github/self-editing.html" target="_blank">self-editing.html</a> is a HTML file with embedded PNG diagrams. The file uses nanocms.js for GitHub I/O and diagram editing. The page <a href="http://alderg.github.io/drawio-github/self-editing.html?action=edit" target="_blank">can be edited</a>.
+
