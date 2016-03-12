@@ -1,7 +1,5 @@
 var nanocms = function(elt)
 {
-			var username = urlParams['username'] || prompt('Username');
-			
 	var urlParams = (function()
 	{
 		var result = new Object();
