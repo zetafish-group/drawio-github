@@ -4,7 +4,7 @@
 	<script type="text/javascript"><![CDATA[
 		function edit(image)
 		{
-			// Uses second part of path as repo name.
+			// Uses first part of path as repo name.
 			// Change this according to your setup.
 			var tokens = window.location.pathname.split('/');
 		
