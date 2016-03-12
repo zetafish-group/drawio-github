@@ -15,9 +15,12 @@
 				var username = prompt('Username');
 				var password = prompt('Password');
 				
-				getSha(username, password, function(sha)
+				var url = 'https://api.github.com/repos/' + username + '/' + repo +
+					'/contents/' + path + '?ref=' + encodeURIComponent(ref);
+			
+				getSha(url, username, password, function(sha)
 				{
-					writeFile(username, password, sha, prompt('Commit Message',
+					writeFile(url, username, password, sha, prompt('Commit Message',
 						'Changed ' + path), function(success)
 						{
 							// TODO
@@ -25,11 +28,8 @@
 				});
 			};
 			
-			var getSha = function(username, password, callback)
+			var getSha = function(url, username, password, callback)
 			{
-				var url = 'https://api.github.com/repos/' + username + '/' + repo +
-					'/contents/' + path + '?ref=' + encodeURIComponent(ref);
-			
 				xhr('GET', url, null, username, password, function(req)
 				{
 					if (req.status == 200)
@@ -45,7 +45,7 @@
 				});
 			};
 			
-			var writeFile = function(username, password, sha, msg, callback)
+			var writeFile = function(url, username, password, sha, msg, callback)
 			{
 				var entity =
 				{
