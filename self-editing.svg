@@ -32,7 +32,7 @@
 			
 				var username = prompt('Username');
 				
-				if (username == null || usernam]]><![CDATA[e.length == 0)
+				if (username == null || username.length == 0)
 				{
 					return;
 				}
@@ -50,7 +50,7 @@
 				{
 					return;
 				}
-]]><![CDATA[				
+]
 				var url = 'https://api.github.com/repos/' + username + '/' + repo +
 					'/contents/' + path + '?ref=' + encodeURIComponent(ref);
 			
