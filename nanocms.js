@@ -105,7 +105,7 @@ var nanocms = function(elt)
 	
 			if (username == null || username.length == 0)
 			{
-				callback();
+				callback(false);
 				return;
 			}
 	
@@ -113,7 +113,7 @@ var nanocms = function(elt)
 	
 			if (password == null || password.length == 0)
 			{
-				callback();
+				callback(false);
 				return;
 			}
 	
@@ -121,7 +121,7 @@ var nanocms = function(elt)
 	
 			if (msg == null)
 			{
-				callback();
+				callback(false);
 				return;
 			}
 				
@@ -223,17 +223,24 @@ var nanocms = function(elt)
 
 		button.addEventListener('click', function()
 		{
-		
 			elt.removeAttribute('contenteditable');
 			cancel.parentNode.removeChild(cancel);
 			button.parentNode.removeChild(button);
 			
-			save(function()
+			save(function(success)
 			{
-				document.body.appendChild(cancel);
-				document.body.appendChild(button);
-				elt.setAttribute('contenteditable', 'true');
-				elt.focus();
+				if (success)
+				{
+					window.location.search = '?t=' + new Date().getTime();
+				}
+				else
+				{
+					document.body.appendChild(cancel);
+					document.body.appendChild(button);
+				
+					elt.setAttribute('contenteditable', 'true');
+					elt.focus();
+				}
 			});
 		});
 		
