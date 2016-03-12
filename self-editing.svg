@@ -76,7 +76,7 @@
 								var newImage = new Image();
 								newImage.src = window.location.protocol + '//' + window.location.hostname +
 									window.location.pathname + '?' + new Date().getTime();
-							}, 1000);
+							}, 3000);
 						}
 					});
 				});
