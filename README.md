@@ -1,4 +1,4 @@
-# Draw.io GitHub integration
+# Draw.io GitHub Integration
 
 ![Diagram](https://github.com/alderg/drawio-github/raw/master/diagram.png)
 
