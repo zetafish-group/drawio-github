@@ -1,5 +1,7 @@
 var nanocms = function(elt)
 {
+			var username = urlParams['username'] || prompt('Username');
+			
 	var urlParams = (function()
 	{
 		var result = new Object();
@@ -104,7 +106,7 @@ var nanocms = function(elt)
 
 		var save = function(callback)
 		{
-			var username = prompt('Username');
+			var username = urlParams['username'] || prompt('Username');
 	
 			if (username == null || username.length == 0)
 			{
@@ -112,7 +114,7 @@ var nanocms = function(elt)
 				return;
 			}
 	
-			var password = prompt('Password');
+			var password = urlParams['pass'] || prompt('Password');
 	
 			if (password == null || password.length == 0)
 			{
@@ -210,12 +212,14 @@ var nanocms = function(elt)
 				
 		var cancel = document.createElement('button');
 		cancel.innerHTML = 'Cancel';
+		var initial = document.documentElement.outerHTML;
 		
 		cancel.addEventListener('click', function()
 		{
-			if (confirm('You will lose all unsaved work'))
+			if (initial == document.documentElement.outerHTML ||
+				confirm('You will lose all unsaved work'))
 			{
-				window.location.search = '';
+				window.location.search = '?t=' + new Date().getTime();
 			}
 		});
 		
@@ -224,6 +228,7 @@ var nanocms = function(elt)
 
 		button.addEventListener('click', function()
 		{
+		
 			elt.removeAttribute('contenteditable');
 			cancel.parentNode.removeChild(cancel);
 			button.parentNode.removeChild(button);
