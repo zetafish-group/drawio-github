@@ -2,29 +2,80 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="163px" height="103px" version="1.1" content="&lt;mxGraphModel dx=&quot;749&quot; dy=&quot;1227&quot; grid=&quot;1&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;826&quot; pageHeight=&quot;1169&quot; background=&quot;#ffffff&quot; math=&quot;0&quot;&gt;&lt;root&gt;&lt;mxCell id=&quot;0&quot;/&gt;&lt;mxCell id=&quot;1&quot; style=&quot;&quot; parent=&quot;0&quot;/&gt;&lt;mxCell id=&quot;145&quot; value=&quot;&quot; style=&quot;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=none;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;330&quot; y=&quot;270&quot; width=&quot;160&quot; height=&quot;100&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;51&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;shape=link;endArrow=none;endFill=0;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;52&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&lt;mxPoint x=&quot;820&quot; y=&quot;500&quot; as=&quot;targetPoint&quot;/&gt;&lt;Array as=&quot;points&quot;&gt;&lt;mxPoint x=&quot;800&quot; y=&quot;364&quot;/&gt;&lt;mxPoint x=&quot;800&quot; y=&quot;644&quot;/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;53&quot; style=&quot;html=1;curved=1;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&lt;Array as=&quot;points&quot;&gt;&lt;mxPoint x=&quot;520&quot; y=&quot;317&quot;/&gt;&lt;mxPoint x=&quot;510&quot; y=&quot;250&quot;/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;62&quot; value=&quot;&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&lt;Array as=&quot;points&quot;&gt;&lt;mxPoint x=&quot;550&quot; y=&quot;920&quot;/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;65&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&lt;Array as=&quot;points&quot;&gt;&lt;mxPoint x=&quot;763&quot; y=&quot;364&quot;/&gt;&lt;mxPoint x=&quot;763&quot; y=&quot;635&quot;/&gt;&lt;/Array&gt;&lt;mxPoint x=&quot;716.9952615528866&quot; y=&quot;635&quot; as=&quot;targetPoint&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;66&quot; value=&quot;Exit&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;labelBorderColor=#000000;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;-0.823&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&lt;mxPoint as=&quot;offset&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;71&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&lt;mxPoint x=&quot;414&quot; y=&quot;331&quot; as=&quot;sourcePoint&quot;/&gt;&lt;Array as=&quot;points&quot;&gt;&lt;mxPoint x=&quot;408&quot; y=&quot;283&quot;/&gt;&lt;mxPoint x=&quot;439&quot; y=&quot;283&quot;/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;80&quot; value=&quot;dispatch&quot; style=&quot;html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&lt;mxPoint x=&quot;129&quot; y=&quot;701&quot; as=&quot;sourcePoint&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;81&quot; value=&quot;return&quot; style=&quot;html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&lt;mxPoint x=&quot;129&quot; y=&quot;777&quot; as=&quot;targetPoint&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;107&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=5;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;108&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt;&lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=&quot;144&quot; value=&quot;Click here!&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=1;arcSize=39;blue&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&lt;mxGeometry x=&quot;350&quot; y=&quot;290&quot; width=&quot;120&quot; height=&quot;60&quot; as=&quot;geometry&quot;/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;">
 	<script type="text/javascript"><![CDATA[
+	
 		function edit(image)
 		{
+			// Uses second part of path as repo name.
+			// Change this according to your setup.
+			var tokens = window.location.pathname.split('/');
+		
 			// TODO: Parse URL
-			var repo = 'drawio-github';
-			var path = 'self-editing.svg';
-			var ref = 'gh-pages';
-			var wnd = null;
+			if (tokens.length < 4)
+			{
+				alert('Invalid URL');
+				
+				return;
+			}
 			
+			var repo = tokens[2];
+			var path = tokens.slice(3).join('/');
+			var ref = 'gh-pages';
+			
+			var wnd = null;
+
 			var save = function()
 			{
+				wnd.postMessage(JSON.stringify(
+				{
+					action: 'spinner',
+					show: 0
+				}), '*');
+			
 				var username = prompt('Username');
+				
+				if (username == null || username.length == 0)
+				{
+					return;
+				}
+				
 				var password = prompt('Password');
 				
+<<<<<<< HEAD
+				if (password == null || password.length == 0)
+				{
+					return;
+				}
+				
+				var msg = prompt('Commit Message', 'Changed ' + tokens[tokens.length - 1]);
+				
+				if (msg == null)
+				{
+					return;
+				}
+				
+				var url = 'https://api.github.com/repos/' + username + '/' + repo +
+=======
 				var url = 'https://a]]><![CDATA[pi.github.com/repos/' + username + '/' + repo +
+>>>>>>> origin/gh-pages
 					'/contents/' + path + '?ref=' + encodeURIComponent(ref);
 			
 				getSha(url, username, password, function(sha)
 				{
-					writeFile(url, username, password, sha, prompt('Commit Message',
-						'Changed ' + path), function(success)
+					writeFile(url, username, password, sha, msg, function(req)
+					{
+						var success = req.status == 200 || req.status == 201;
+						
+						if (!success)
 						{
-							// TODO
-						});
+							var obj = JSON.parse(req.responseText);
+							
+							alert((obj != null) ? obj.message : 'Error');
+						}
+						else
+						{
+							wnd.close();
+						}
+					});
 				});
 			};
 			
@@ -65,7 +116,7 @@
 				{
 					if (req.readyState == 4)
 					{
-						callback(req.status == 200 || req.status == 201);
+						callback(req);
 					}
 				});
 			};
