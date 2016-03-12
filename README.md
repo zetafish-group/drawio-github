@@ -1,4 +1,4 @@
-# Draw.io GitHub roundtrip editing
+# Draw.io GitHub integration
 
 ![Diagram](https://github.com/alderg/drawio-github/raw/master/diagram.png)
 
