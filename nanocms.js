@@ -108,6 +108,7 @@ var nanocms = function(elt)
 	
 			if (username == null || username.length == 0)
 			{
+				callback();
 				return;
 			}
 	
@@ -115,6 +116,7 @@ var nanocms = function(elt)
 	
 			if (password == null || password.length == 0)
 			{
+				callback();
 				return;
 			}
 	
@@ -122,6 +124,7 @@ var nanocms = function(elt)
 	
 			if (msg == null)
 			{
+				callback();
 				return;
 			}
 				
