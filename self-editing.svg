@@ -51,7 +51,9 @@
 				{
 					path: path,
 					message: msg,
-					content: content
+					content: '<?xml version="1.0" encoding="UTF-8"?>\n' +
+						'<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n' +
+						document.documentElement.outerHTML
 				};			
 			
 				if (sha != null)
