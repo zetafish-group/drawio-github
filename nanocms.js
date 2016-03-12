@@ -210,7 +210,7 @@ var nanocms = function(elt)
 				
 		var cancel = document.createElement('button');
 		cancel.innerHTML = 'Cancel';
-		var initial = document.documentElement.outerHTML;
+		var initial = null;
 		
 		cancel.addEventListener('click', function()
 		{
@@ -230,6 +230,8 @@ var nanocms = function(elt)
 			elt.removeAttribute('contenteditable');
 			cancel.parentNode.removeChild(cancel);
 			button.parentNode.removeChild(button);
+			initial = document.documentElement.outerHTML;
+			
 			save(function()
 			{
 				document.body.appendChild(cancel);
