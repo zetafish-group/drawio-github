@@ -10,15 +10,15 @@
 			var tokens = window.location.pathname.split('/');
 		
 			// TODO: Parse URL
-			if (tokens.length < 4)
+			if (tokens.length < 2)
 			{
 				alert('Invalid URL');
 				
 				return;
 			}
 			
-			var repo = tokens[2];
-			var path = tokens.slice(3).join('/');
+			var repo = tokens[1];
+			var path = tokens.slice(2).join('/');
 			var ref = 'gh-pages';
 			
 			var wnd = null;
