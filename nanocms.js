@@ -102,16 +102,8 @@ var nanocms = function(elt)
 		var path = tokens.slice(2).join('/');
 		var ref = 'gh-pages';
 
-		var wnd = null;
-
 		var save = function(callback)
 		{
-			wnd.postMessage(JSON.stringify(
-			{
-				action: 'spinner',
-				show: 0
-			}), '*');
-
 			var username = prompt('Username');
 	
 			if (username == null || username.length == 0)
@@ -147,10 +139,6 @@ var nanocms = function(elt)
 						var obj = JSON.parse(req.responseText);
 				
 						alert((obj != null) ? obj.message : 'Error');
-					}
-					else
-					{
-						wnd.close();
 					}
 					
 					callback(success);
