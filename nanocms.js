@@ -204,10 +204,21 @@ var nanocms = function(elt)
 
 			req.send(data);
 		};
+				
+		var cancel = document.createElement('button');
+		cancel.innerHTML = 'Cancel';
+		
+		cancel.addEventListener('click', function()
+		{
+			if (confirm('You will lose all unsaved work'))
+			{
+				window.location.search = '';
+			}
+		});
 		
 		var button = document.createElement('button');
 		button.innerHTML = 'Save';
-		
+
 		button.addEventListener('click', function()
 		{
 			elt.removeAttribute('contenteditable');
@@ -220,6 +231,7 @@ var nanocms = function(elt)
 			});
 		});
 		
+		document.body.appendChild(cancel);
 		document.body.appendChild(button);
 	}
 };
