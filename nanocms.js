@@ -225,9 +225,11 @@ var nanocms = function(elt)
 		button.addEventListener('click', function()
 		{
 			elt.removeAttribute('contenteditable');
+			cancel.parentNode.removeChild(cancel);
 			button.parentNode.removeChild(button);
 			save(function()
 			{
+				document.body.appendChild(cancel);
 				document.body.appendChild(button);
 				elt.setAttribute('contenteditable', 'true');
 				elt.focus();
