@@ -24,9 +24,6 @@ var nanocms = function(elt)
 
 	if (tokens.length >= 2 && urlParams['action'] == 'edit')
 	{
-		elt.setAttribute('contenteditable', 'true');
-		elt.focus();
-		
 		// Edits an image with drawio class on double click
 		document.addEventListener('dblclick', function(evt)
 		{
@@ -230,7 +227,6 @@ var nanocms = function(elt)
 			elt.removeAttribute('contenteditable');
 			cancel.parentNode.removeChild(cancel);
 			button.parentNode.removeChild(button);
-			initial = document.documentElement.outerHTML;
 			
 			save(function()
 			{
@@ -243,5 +239,10 @@ var nanocms = function(elt)
 		
 		document.body.appendChild(cancel);
 		document.body.appendChild(button);
+		
+		elt.setAttribute('contenteditable', 'true');
+		elt.focus();
+		
+		initial = document.documentElement.outerHTML;
 	}
 };
