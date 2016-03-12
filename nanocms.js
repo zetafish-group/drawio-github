@@ -229,18 +229,13 @@ var nanocms = function(elt)
 			
 			save(function(success)
 			{
-				if (success)
-				{
-					window.location.search = '?t=' + new Date().getTime();
-				}
-				else
-				{
-					document.body.appendChild(cancel);
-					document.body.appendChild(button);
+				document.body.appendChild(cancel);
+				document.body.appendChild(button);
+			
+				elt.setAttribute('contenteditable', 'true');
+				elt.focus();
 				
-					elt.setAttribute('contenteditable', 'true');
-					elt.focus();
-				}
+				initial = document.documentElement.outerHTML;
 			});
 		});
 		
