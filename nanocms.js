@@ -29,7 +29,27 @@ var nanocms = function(elt)
 		{
 			var url = 'https://www.draw.io/?embed=1&ui=atlas&spin=1&modified=unsavedChanges&proto=json';
 			var source = evt.srcElement || evt.target;
-	
+			
+			// Redirects to foreignObject
+			if (source.ownerSVGElement == null)
+			{
+				var fo = source.parentNode;
+			
+				while (fo != null && fo.nodeType == 1 &&
+					fo.nodeName != 'foreignObject')
+				{
+					fo = fo.parentNode;
+				}
+				
+				console.log('here', source, source.ownerSVGElement, fo);
+			
+				if (fo != null)
+				{
+					source = fo;
+				}
+			}
+			
+			// Redirects to SVG element
 			if (source.ownerSVGElement != null)
 			{
 				source = source.ownerSVGElement;
