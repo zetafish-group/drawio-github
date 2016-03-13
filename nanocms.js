@@ -30,7 +30,7 @@ var nanocms = function(elt)
 			var url = 'https://www.draw.io/?embed=1&ui=atlas&spin=1&modified=unsavedChanges&proto=json';
 			var source = evt.srcElement || evt.target;
 	
-			if (source.nodeName == 'IMG' && source.className == 'drawio')
+			if (source.nodeName == 'IMG' && source.className == 'nanocms-diagram')
 			{
 				// Checks if the elt is inside a content editable element
 				var parent = source;
