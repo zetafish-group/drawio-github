@@ -259,4 +259,17 @@ var nanocms = function(elt)
 		
 		initial = document.documentElement.outerHTML;
 	}
+	else
+	{
+			// Edits an image with drawio class on double click
+		document.addEventListener('dblclick', function(evt)
+		{
+			var source = evt.srcElement || evt.target;
+	
+			if (source.nodeName == 'IMG' && source.className == 'nanocms-diagram')
+			{
+				window.open(source.getAttribute('src'));
+			}
+		});
+	}
 };
