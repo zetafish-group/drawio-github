@@ -30,7 +30,6 @@ var nanocms = function(elt)
 			var url = 'https://www.draw.io/?embed=1&ui=atlas&spin=1&modified=unsavedChanges&proto=json';
 			var source = evt.srcElement || evt.target;
 	
-			console.log('here', evt, source, source.ownerSVGElement);
 			if (source.ownerSVGElement != null)
 			{
 				source = source.ownerSVGElement;
@@ -47,8 +46,6 @@ var nanocms = function(elt)
 				{
 					parent = parent.parentNode;
 				}
-				
-				console.log('here2', parent);
 	
 				if (parent != null && parent.nodeType == 1 && parent.getAttribute('contentEditable') == 'true')
 				{
