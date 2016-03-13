@@ -116,13 +116,13 @@ var nanocms = function(elt)
 										var wrapper = document.createElement('div');
 										var svg = document.createElement('svg');
 										wrapper.appendChild(svg);
-										svg.outerHTML = atob(msg.data.substring(msg.data.indexOf(',') + 1));
+										svg.outerHTML = decodeURIComponent(escape(atob(msg.data.substring(msg.data.indexOf(',') + 1))));
 										wrapper.firstChild.setAttribute('class', 'nanocms-diagram');
 										var w = parseInt(wrapper.firstChild.getAttribute('width'));
 										var h = parseInt(wrapper.firstChild.getAttribute('height'));
 										wrapper.firstChild.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
 									
-										// Updates the inline SVG	
+										// Updates the inline SVG
 										source.outerHTML = wrapper.innerHTML;
 									}
 									else
