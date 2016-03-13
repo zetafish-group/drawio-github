@@ -55,14 +55,25 @@ var nanocms = function(elt)
 								// Received if the editor is ready
 								if (msg.event == 'init')
 								{
+									var data = source.getAttribute('src');
+								
 									// Sends the data URI with embedded XML to editor
-									source.drawIoWindow.postMessage(JSON.stringify({action: 'load', xmlpng: source.getAttribute('src')}), '*');
+									if (data.substring(0, 19) == 'data:image/svg+xml;')
+									{
+										source.drawIoWindow.postMessage(JSON.stringify({action: 'load', xml: data}), '*');
+									}
+									else
+									{
+										source.drawIoWindow.postMessage(JSON.stringify({action: 'load', xmlpng: data}), '*');
+									}
 								}
 								// Received if the user clicks save
 								else if (msg.event == 'save')
 								{
 									// Sends a request to export the diagram as XML with embedded PNG
-									source.drawIoWindow.postMessage(JSON.stringify({action: 'export', format: 'xmlpng', spinKey: 'saving'}), '*');
+									source.drawIoWindow.postMessage(JSON.stringify({action: 'export',
+										format: (source.getAttribute('src').substring(0, 19) == 'data:image/svg+xml;') ?
+										'xmlsvg' : 'xmlpng', spinKey: 'saving'}), '*');
 								}
 								// Received if the export request was processed
 								else if (msg.event == 'export')
