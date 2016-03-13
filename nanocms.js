@@ -41,8 +41,6 @@ var nanocms = function(elt)
 					fo = fo.parentNode;
 				}
 				
-				console.log('here', source, source.ownerSVGElement, fo);
-			
 				if (fo != null)
 				{
 					source = fo;
