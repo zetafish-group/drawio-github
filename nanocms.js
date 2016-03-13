@@ -112,11 +112,15 @@ var nanocms = function(elt)
 									if (source.nodeName == 'svg')
 									{
 										// Workaround for assigning class after setting outerHTML
+										// and adding viewbox for responsive resize
 										var wrapper = document.createElement('div');
 										var svg = document.createElement('svg');
 										wrapper.appendChild(svg);
 										svg.outerHTML = atob(msg.data.substring(msg.data.indexOf(',') + 1));
 										wrapper.firstChild.setAttribute('class', 'nanocms-diagram');
+										var w = parseInt(wrapper.firstChild.getAttribute('width'));
+										var h = parseInt(wrapper.firstChild.getAttribute('height'));
+										wrapper.firstChild.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
 									
 										// Updates the inline SVG	
 										source.outerHTML = wrapper.innerHTML;
