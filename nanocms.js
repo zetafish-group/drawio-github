@@ -95,6 +95,7 @@ var nanocms = function(elt)
 			}
 		}, true);
 
+		var org = window.location.hostname.split('.')[0];
 		var repo = tokens[1];
 		var path = tokens.slice(2).join('/');
 		var ref = 'gh-pages';
@@ -125,7 +126,7 @@ var nanocms = function(elt)
 				return;
 			}
 				
-			var url = 'https://api.github.com/repos/' + username + '/' + repo +
+			var url = 'https://api.github.com/repos/' + org + '/' + repo +
 				'/contents/' + path + '?ref=' + encodeURIComponent(ref);
 
 			getSha(url, username, password, function(sha)

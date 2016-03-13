@@ -174,11 +174,11 @@
 			button.setAttribute('disabled', 'disabled');
 			button.innerHTML = 'Loading...';
 			
-			var username = document.getElementById('username').value;
+			var org = document.getElementById('org').value;
 			var repo = document.getElementById('repo').value;
 			var path = document.getElementById('path').value;
 			var ref = document.getElementById('ref').value;
-			var url = 'https://api.github.com/repos/' + username + '/' + repo +
+			var url = 'https://api.github.com/repos/' + org + '/' + repo +
 				'/contents/' + path + '?ref=' + encodeURIComponent(ref);
 			
 			xhr('GET', url, null, function(req)
@@ -245,6 +245,7 @@
 		{
 			document.getElementById('username').value = urlParams['user'] || '';
 			document.getElementById('password').value = urlParams['pass'] || '';
+			document.getElementById('org').value = urlParams['org'] || '';
 			document.getElementById('repo').value = urlParams['repo'] || '';
 			document.getElementById('path').value = urlParams['path'] || '';
 			document.getElementById('ref').value = urlParams['ref'] || 'gh-pages';
@@ -273,6 +274,7 @@
 <table>
 <tr><td>Username:</td><td><input id="username" type="text"/></td></tr>
 <tr><td>Password:</td><td><input id="password" type="password"/></td></tr>
+<tr><td>Organization:</td><td><input id="org" type="org"/></td></tr>
 <tr><td>Repository:</td><td><input id="repo" type="text"/></td></tr>
 <tr><td>Path:</td><td><input id="path" type="text"/></td></tr>
 <tr><td>Ref:</td><td><input id="ref" type="text"/></td></tr>
