@@ -1,18 +1,6 @@
 .nanocms-diagram {
 	max-width:100%;
 }
-.nanocms-reflect:after {
-    content:"";
-    display: block;
-    background: -moz-element(#moz-reflect) no-repeat;
-    width: auto;
-    height: 200px;
-    margin-bottom: 100px;
-    -moz-transform: scaleY(-1);
-}
-.nanocms-reflect img {
-    -webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(255,255,255,0.5)));
-}
 .nanocms-shadow1 {
 	position:relative;
 	display:inline-block;
