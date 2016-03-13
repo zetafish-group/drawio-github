@@ -31,7 +31,7 @@ var nanocms = function(elt)
 			var source = evt.srcElement || evt.target;
 			
 			// Redirects to foreignObject
-			if (source.nodeName != 'svg' && source.ownerSVGElement == null)
+			if (source.ownerSVGElement == null)
 			{
 				var fo = source.parentNode;
 			
