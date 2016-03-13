@@ -8,7 +8,6 @@
 			// Change this according to your setup.
 			var tokens = window.location.pathname.split('/');
 		
-			// TODO: Parse URL
 			if (tokens.length < 2)
 			{
 				alert('Invalid URL');
