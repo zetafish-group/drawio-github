@@ -16,5 +16,5 @@ Supported file formats: .png, .svg, .html and .xml (default)
 
 ## Self-editing HTML file
 
-<a href="http://jgraph.github.io/drawio-github/self-editing.html" target="_blank">self-editing.html</a> is a HTML file with embedded PNG diagrams. The file uses nanocms.js for GitHub I/O and diagram editing.
+<a href="http://jgraph.github.io/drawio-github/self-editing.html" target="_blank">self-editing.html</a> is a HTML file with embedded PNG diagrams. The file uses nanocms.js for GitHub I/O and diagram editing, and Bootstrap and nanocms.css for some fancy CSS styles.
 
