@@ -231,7 +231,7 @@ var nanocms = function(elt)
 			{
 				path: path,
 				message: msg,
-				content: btoa(document.documentElement.outerHTML)
+				content: btoa(unescape(encodeURIComponent(document.documentElement.outerHTML)))
 			};			
 
 			if (sha != null)
