@@ -30,7 +30,14 @@ var nanocms = function(elt)
 			var url = 'https://www.draw.io/?embed=1&ui=atlas&spin=1&modified=unsavedChanges&proto=json';
 			var source = evt.srcElement || evt.target;
 	
-			if (source.nodeName == 'IMG' && source.className == 'nanocms-diagram')
+			console.log('here', evt, source, source.ownerSVGElement);
+			if (source.ownerSVGElement != null)
+			{
+				source = source.ownerSVGElement;
+			}
+			
+			if ((source.nodeName == 'IMG' && source.className == 'nanocms-diagram') ||
+				(source.nodeName == 'svg' && source.className.baseVal == 'nanocms-diagram'))
 			{
 				// Checks if the elt is inside a content editable element
 				var parent = source;
@@ -40,11 +47,15 @@ var nanocms = function(elt)
 				{
 					parent = parent.parentNode;
 				}
+				
+				console.log('here2', parent);
 	
 				if (parent != null && parent.nodeType == 1 && parent.getAttribute('contentEditable') == 'true')
 				{
 					if (source.drawIoWindow == null || source.drawIoWindow.closed)
 					{
+						var isPng = false;
+					
 						// Implements protocol for loading and exporting with embedded XML
 						var receive = function(evt)
 						{
@@ -56,15 +67,22 @@ var nanocms = function(elt)
 								if (msg.event == 'init')
 								{
 									var data = source.getAttribute('src');
+									
+									if (source.nodeName == 'svg')
+									{
+										data = decodeURIComponent(source.getAttribute('content'));
+									}
+									
+									isPng = data.substring(0, 15) == 'data:image/png;';
 								
 									// Sends the data URI with embedded XML to editor
-									if (data.substring(0, 19) == 'data:image/svg+xml;')
+									if (isPng)
 									{
-										source.drawIoWindow.postMessage(JSON.stringify({action: 'load', xml: data}), '*');
+										source.drawIoWindow.postMessage(JSON.stringify({action: 'load', xmlpng: data}), '*');
 									}
 									else
 									{
-										source.drawIoWindow.postMessage(JSON.stringify({action: 'load', xmlpng: data}), '*');
+										source.drawIoWindow.postMessage(JSON.stringify({action: 'load', xml: data}), '*');
 									}
 								}
 								// Received if the user clicks save
@@ -72,14 +90,28 @@ var nanocms = function(elt)
 								{
 									// Sends a request to export the diagram as XML with embedded PNG
 									source.drawIoWindow.postMessage(JSON.stringify({action: 'export',
-										format: (source.getAttribute('src').substring(0, 19) == 'data:image/svg+xml;') ?
-										'xmlsvg' : 'xmlpng', spinKey: 'saving'}), '*');
+										format: (isPng) ? 'xmlpng' : 'xmlsvg', spinKey: 'saving'}), '*');
 								}
 								// Received if the export request was processed
 								else if (msg.event == 'export')
 								{
-									// Updates the data URI of the image
-									source.setAttribute('src', msg.data);
+									if (source.nodeName == 'svg')
+									{
+										// Workaround for assigning class after setting outerHTML
+										var wrapper = document.createElement('div');
+										var svg = document.createElement('svg');
+										wrapper.appendChild(svg);
+										svg.outerHTML = atob(msg.data.substring(msg.data.indexOf(',') + 1));
+										wrapper.firstChild.setAttribute('class', 'nanocms-diagram');
+									
+										// Updates the inline SVG	
+										source.outerHTML = wrapper.innerHTML;
+									}
+									else
+									{
+										// Updates the data URI of the image
+										source.setAttribute('src', msg.data);
+									}
 								}
 		
 								// Received if the user clicks exit or after export
