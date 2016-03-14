@@ -21,6 +21,35 @@ var nanocms = function(elt)
 	// Uses first part of path as repo name.
 	// Change this according to your setup.
 	var tokens = window.location.pathname.split('/');
+	
+	var getEventSourceDiagram = function(evt)
+	{
+		var source = evt.srcElement || evt.target;
+	
+		// Redirects to foreignObject
+		if (source.ownerSVGElement == null)
+		{
+			var fo = source.parentNode;
+	
+			while (fo != null && fo.nodeName != 'foreignObject')
+			{
+				fo = fo.parentNode;
+			}
+		
+			if (fo != null)
+			{
+				source = fo;
+			}
+		}
+	
+		// Redirects to SVG element
+		if (source.ownerSVGElement != null)
+		{
+			source = source.ownerSVGElement;
+		}
+	
+		return source;
+	};
 
 	if (tokens.length >= 2 && urlParams['action'] == 'edit')
 	{
@@ -28,30 +57,8 @@ var nanocms = function(elt)
 		document.addEventListener('dblclick', function(evt)
 		{
 			var url = 'https://www.draw.io/?embed=1&ui=atlas&spin=1&modified=unsavedChanges&proto=json';
-			var source = evt.srcElement || evt.target;
-			
-			// Redirects to foreignObject
-			if (source.ownerSVGElement == null)
-			{
-				var fo = source.parentNode;
-			
-				while (fo != null && fo.nodeName != 'foreignObject')
-				{
-					fo = fo.parentNode;
-				}
-				
-				if (fo != null)
-				{
-					source = fo;
-				}
-			}
-			
-			// Redirects to SVG element
-			if (source.ownerSVGElement != null)
-			{
-				source = source.ownerSVGElement;
-			}
-			
+			var source = getEventSourceDiagram(evt);
+
 			if ((source.nodeName == 'IMG' && source.className == 'nanocms-diagram') ||
 				(source.nodeName == 'svg' && source.className.baseVal == 'nanocms-diagram'))
 			{
@@ -312,5 +319,43 @@ var nanocms = function(elt)
 		elt.focus();
 		
 		initial = document.documentElement.outerHTML;
+	}
+	else
+	{
+		// Edits an image with drawio class on double click
+		document.addEventListener('dblclick', function(evt)
+		{
+			var url = 'https://test.draw.io/?dev=1&client=1&ui=atlas&chrome=0&edit=_blank';
+			var source = getEventSourceDiagram(evt);
+			
+			if ((source.nodeName == 'IMG' && source.className == 'nanocms-diagram') ||
+				(source.nodeName == 'svg' && source.className.baseVal == 'nanocms-diagram'))
+			{
+				if (source.drawIoWindow == null || source.drawIoWindow.closed)
+				{
+					// Waits for ready message
+					var receive = function(evt)
+					{
+						if (evt.data == 'ready' && evt.source == source.drawIoWindow)
+						{
+							var data = (source.nodeName == 'svg') ?
+								decodeURIComponent(source.getAttribute('content')) :
+								source.getAttribute('src');
+			
+							source.drawIoWindow.postMessage(data, '*');
+							window.removeEventListener('message', receive);
+						}
+					};
+							
+					window.addEventListener('message', receive);
+					source.drawIoWindow = window.open(url);
+				}
+				else
+				{
+					// Shows existing editor window
+					source.drawIoWindow.focus();
+				}
+			}
+		});
 	}
 };
