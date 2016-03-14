@@ -325,7 +325,7 @@ var nanocms = function(elt)
 		// Edits an image with drawio class on double click
 		document.addEventListener('dblclick', function(evt)
 		{
-			var url = 'https://test.draw.io/?dev=1&client=1&ui=atlas&chrome=0&edit=_blank';
+			var url = 'https://www.draw.io/?client=1&chrome=0&edit=_blank';
 			var source = getEventSourceDiagram(evt);
 			
 			if ((source.nodeName == 'IMG' && source.className == 'nanocms-diagram') ||
